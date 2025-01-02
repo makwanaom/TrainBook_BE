@@ -1,4 +1,4 @@
-const { getSeats, reserveSeats, cancelReservation } = require('../models/seatModel');
+const { getSeats, reserveSeats} = require('../models/seatModel');
 
 const getSeatAvailability = async (req, res) => {
   try {
@@ -62,19 +62,4 @@ const bookSeats = async (req, res) => {
   }
 };
 
-const cancelSeats = async (req, res) => {
-  const { seatIds } = req.body;
-
-  try {
-    if (!seatIds || seatIds.length === 0) {
-      return res.status(400).send({ message: 'No seats specified for cancellation' });
-    }
-
-    const cancelledSeats = await cancelReservation(seatIds);
-    res.status(200).send(cancelledSeats);
-  } catch (error) {
-    res.status(500).send({ message: 'Failed to cancel seat reservation', error });
-  }
-};
-
-module.exports = { getSeatAvailability, bookSeats, cancelSeats };
+module.exports = { getSeatAvailability, bookSeats};
