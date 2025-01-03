@@ -40,7 +40,7 @@ This is the backend of the Train Seat Booking system, built with Node.js and Exp
 
 ![Seat Layout](./assets/seat-layout.png)
 
-**Table Name**: seats
-**id (integer)**: Primary key for each seat.
-**reserved (boolean)**: Status of the seat (true = booked, false = available).
-**reserved_by (integer, nullable)**: User ID of the reserver (nullable for available seats).
+ - **Table Name**: seats
+ - **id (integer)**: Primary key for each seat.
+ - **reserved (boolean)**: Status of the seat (true = booked, false = available).
+ - **reserved_by (integer, nullable)**: User ID of the reserver (nullable for available seats).
